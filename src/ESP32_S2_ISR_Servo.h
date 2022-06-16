@@ -18,11 +18,12 @@
   Based on BlynkTimer.h
   Author: Volodymyr Shymanskyy
 
-  Version: 1.1.0
+  Version: 1.1.1
 
   Version Modified By  Date        Comments
   ------- -----------  ----------  -----------
   1.1.0   K Hoang      03/08/2021  Initial coding for ESP32_S2
+  1.1.1   K Hoang      16/06/2022 Add support to new Adafruit board QTPY_ESP32S2
  *****************************************************************************************************************************/
 
 #pragma once
@@ -31,12 +32,12 @@
 #define ESP32_S2_ISR_SERVO_H
 
 #if !( ARDUINO_ESP32S2_DEV || ARDUINO_FEATHERS2 || ARDUINO_ESP32S2_THING_PLUS || ARDUINO_MICROS2 || \
-        ARDUINO_METRO_ESP32S2 || ARDUINO_MAGTAG29_ESP32S2 || ARDUINO_FUNHOUSE_ESP32S2 || \
-        ARDUINO_ADAFRUIT_FEATHER_ESP32S2_NOPSRAM )
+      ARDUINO_METRO_ESP32S2 || ARDUINO_MAGTAG29_ESP32S2 || ARDUINO_FUNHOUSE_ESP32S2 || \
+      ARDUINO_ADAFRUIT_FEATHER_ESP32S2_NOPSRAM || ARDUINO_ADAFRUIT_QTPY_ESP32S2)
   #error This code is intended to run on the ESP32_S2 platform! Please check your Tools->Board setting.
 #endif
 
-#define ESP32_S2_ISR_SERVO_VERSION       "ESP32_S2_ISR_Servo v1.1.0"
+#define ESP32_S2_ISR_SERVO_VERSION       "ESP32_S2_ISR_Servo v1.1.1"
 
 #include <stddef.h>
 

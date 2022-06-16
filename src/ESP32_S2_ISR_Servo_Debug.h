@@ -18,11 +18,12 @@
   Based on BlynkTimer.h
   Author: Volodymyr Shymanskyy
 
-  Version: 1.1.0
+  Version: 1.1.1
 
   Version Modified By  Date        Comments
   ------- -----------  ----------  -----------
   1.1.0   K Hoang      03/08/2021  Initial coding for ESP32_S2
+  1.1.1   K Hoang      16/06/2022 Add support to new Adafruit board QTPY_ESP32S2
  *****************************************************************************************************************************/
 
 #pragma once

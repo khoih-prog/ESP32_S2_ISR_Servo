@@ -26,12 +26,6 @@
   if the interrupt changes a multi-byte variable between a sequence of instructions, it can be read incorrectly.
   If your data is multiple variables, such as an array and a count, usually interrupts need to be disabled
   or the entire sequence of your code which accesses the data.
-  
-  Version: 1.1.0
-
-  Version Modified By  Date        Comments
-  ------- -----------  ----------  -----------
-  1.1.0   K Hoang      03/08/2021  Initial coding for ESP32_S2
 *****************************************************************************************************************************/
 
 /****************************************************************************************************************************
@@ -74,11 +68,6 @@
    if you are particular, adjust the min and max values to match your needs.
    Experimentally, 550 and 2350 are pretty close to 0 and 180.
 *****************************************************************************************************************************/
-
-#if !( ARDUINO_ESP32S2_DEV || ARDUINO_FEATHERS2 || ARDUINO_ESP32S2_THING_PLUS || ARDUINO_MICROS2 || ARDUINO_METRO_ESP32S2 || ARDUINO_MAGTAG29_ESP32S2 || \
-       ARDUINO_FUNHOUSE_ESP32S2 || ARDUINO_ADAFRUIT_FEATHER_ESP32S2_NOPSRAM )
-  #error This code is intended to run on the ESP32_S2 platform! Please check your Tools->Board setting.
-#endif
 
 #define TIMER_INTERRUPT_DEBUG       1
 #define ISR_SERVO_DEBUG             1

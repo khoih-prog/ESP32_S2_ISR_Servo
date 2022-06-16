@@ -6,7 +6,8 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#Contributing)
 [![GitHub issues](https://img.shields.io/github/issues/khoih-prog/ESP32_S2_ISR_Servo.svg)](http://github.com/khoih-prog/ESP32_S2_ISR_Servo/issues)
 
-<a href="https://www.buymeacoffee.com/khoihprog6" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 181px !important;" ></a>
+<a href="https://www.buymeacoffee.com/khoihprog6" title="Donate to my libraries using BuyMeACoffee"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Donate to my libraries using BuyMeACoffee" style="height: 50px !important;width: 181px !important;" ></a>
+<a href="https://www.buymeacoffee.com/khoihprog6" title="Donate to my libraries using BuyMeACoffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-orange.svg?logo=buy-me-a-coffee&logoColor=FFDD00" style="height: 20px !important;width: 200px !important;" ></a>
 
 ---
 ---
@@ -17,8 +18,7 @@
   * [Features](#features)
   * [Important Notes about using ISR](#important-notes-about-using-isr)
   * [Currently supported Boards](#currently-supported-boards)
-* [Changelog](#changelog)
-  * [Releases v1.1.0](#releases-v110)
+* [Changelog](changelog.md)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
   * [Use Arduino Library Manager](#use-arduino-library-manager)
@@ -96,18 +96,7 @@ This library enables you to use `1 Hardware Timer` on an ESP32-based board to co
 
 This [**ESP32_S2_ISR_Servo** library](https://github.com/khoih-prog/ESP32_S2_ISR_Servo) currently supports these following boards:
 
- 1. **ESP32_S2-based boards**.
- 
----
----
-
-## Changelog
-
-### Releases v1.1.0
-
-1. Basic 16 ISR-based servo controllers using 1 hardware timer for ESP32_S2.
-2. Tested with ESP32 core v2.0.0-rc1 and v1.0.6
-
+ 1. **ESP32_S2-based boards**, such as `ESP32S2_DEV`, `ESP32_S2 Saola`, Adafruit QTPY_ESP32S2, etc.
 
 ---
 ---
@@ -115,7 +104,7 @@ This [**ESP32_S2_ISR_Servo** library](https://github.com/khoih-prog/ESP32_S2_ISR
 ## Prerequisites
 
 1. [`Arduino IDE 1.8.19+` for Arduino](https://github.com/arduino/Arduino). [![GitHub release](https://img.shields.io/github/release/arduino/Arduino.svg)](https://github.com/arduino/Arduino/releases/latest)
-2. [`ESP32 Core 2.0.2+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
+2. [`ESP32 Core 2.0.3+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
 
 ---
 
@@ -139,7 +128,7 @@ Another way to install is to:
 
 1. Install [VS Code](https://code.visualstudio.com/)
 2. Install [PlatformIO](https://platformio.org/platformio-ide)
-3. Install [**ESP32_S2_ISR_Servo** library](https://platformio.org/lib/show/12639/ESP32_S2_ISR_Servo) by using [Library Manager](https://platformio.org/lib/show/12639/ESP32_S2_ISR_Servo/installation). Search for **ESP32_S2_ISR_Servo** in [Platform.io Author's Libraries](https://platformio.org/lib/search?query=author:%22Khoi%20Hoang%22)
+3. Install [**ESP32_S2_ISR_Servo** library](https://registry.platformio.org/libraries/ESP32_S2_ISR_Servo) by using [Library Manager](https://registry.platformio.org/libraries/ESP32_S2_ISR_Servo/installation). Search for **ESP32_S2_ISR_Servo** in [Platform.io Author's Libraries](https://platformio.org/lib/search?query=author:%22Khoi%20Hoang%22)
 4. Use included [platformio.ini](platformio/platformio.ini) file from examples to ensure that all dependent libraries will installed automatically. Please visit documentation for the other options and examples at [Project Configuration File](https://docs.platformio.org/page/projectconf.html)
 
 ---
@@ -228,11 +217,6 @@ You'll see blynkTimer Software is blocked while system is connecting to WiFi / I
 How to use:
 
 ```
-#if !( ARDUINO_ESP32S2_DEV || ARDUINO_FEATHERS2 || ARDUINO_ESP32S2_THING_PLUS || ARDUINO_MICROS2 || ARDUINO_METRO_ESP32S2 || ARDUINO_MAGTAG29_ESP32S2 || \
-       ARDUINO_FUNHOUSE_ESP32S2 || ARDUINO_ADAFRUIT_FEATHER_ESP32S2_NOPSRAM )
-  #error This code is intended to run on the ESP32_S2 platform! Please check your Tools->Board setting.
-#endif
-
 #define TIMER_INTERRUPT_DEBUG       1
 #define ISR_SERVO_DEBUG             1
 
@@ -343,11 +327,6 @@ void loop()
 #### 1. File [ESP32_S2_ISR_MultiServos.ino](examples/ESP32_S2_ISR_MultiServos/ESP32_S2_ISR_MultiServos.ino)
 
 ```cpp
-#if !( ARDUINO_ESP32S2_DEV || ARDUINO_FEATHERS2 || ARDUINO_ESP32S2_THING_PLUS || ARDUINO_MICROS2 || ARDUINO_METRO_ESP32S2 || ARDUINO_MAGTAG29_ESP32S2 || \
-       ARDUINO_FUNHOUSE_ESP32S2 || ARDUINO_ADAFRUIT_FEATHER_ESP32S2_NOPSRAM )
-  #error This code is intended to run on the ESP32_S2 platform! Please check your Tools->Board setting.
-#endif
-
 #define TIMER_INTERRUPT_DEBUG       1
 #define ISR_SERVO_DEBUG             1
 
@@ -490,7 +469,7 @@ void loop()
 
 ```
 Starting ESP32_S2_MultipleRandomServos on ESP32S2_DEV
-ESP32_S2_ISR_Servo v1.1.0
+ESP32_S2_ISR_Servo v1.1.1
 [ISR_SERVO] ESP32_S2_FastTimerInterrupt: _timerNo = 3 , _fre = 1000000
 [ISR_SERVO] TIMER_BASE_CLK = 80000000 , TIMER_DIVIDER = 80
 [ISR_SERVO] _timerIndex = 1 , _timerGroup = 1
@@ -606,7 +585,7 @@ Servos sweeps from 0-180 degress
 
 ```
 Starting ESP32_S2_ISR_MultiServos on ESP32S2_DEV
-ESP32_S2_ISR_Servo v1.1.0
+ESP32_S2_ISR_Servo v1.1.1
 [ISR_SERVO] ESP32_S2_FastTimerInterrupt: _timerNo = 3 , _fre = 1000000
 [ISR_SERVO] TIMER_BASE_CLK = 80000000 , TIMER_DIVIDER = 80
 [ISR_SERVO] _timerIndex = 1 , _timerGroup = 1
@@ -645,17 +624,6 @@ You can also change the debugging level from 0 to 2. Be careful and using level 
 If you get compilation errors, more often than not, you may need to install a newer version of the core for Arduino boards.
 
 Sometimes, the library will only work if you update the board core to the latest version because I am using newly added functions.
-
-
----
----
-
-## Releases
-
-### Releases v1.1.0
-
-1. Basic 16 ISR-based servo controllers using 1 hardware timer for ESP32_S2.
-2. Tested with ESP32 core v2.0.0-rc1 and v1.0.6
 
 ---
 ---
